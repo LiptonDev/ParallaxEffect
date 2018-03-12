@@ -1,0 +1,54 @@
+﻿<Window x:Class="ParallaxEffectDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:parallax="clr-namespace:ParallaxEffect;assembly=ParallaxEffect"
+        xmlns:i="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        Title="MainWindow" Height="350" Width="525">
+
+    <i:Interaction.Behaviors>
+        <parallax:Parallax/>
+    </i:Interaction.Behaviors>
+
+    <Grid>
+        <Image Source="Images/bg.jpg"
+               Margin="-20"
+               Stretch="Fill"
+               parallax:Parallax.UseParallax="True"
+               parallax:Parallax.XOffset="120"
+               parallax:Parallax.YOffset="120"/>
+
+        <Image Source="Images/WPF_Csharp.png"
+               Width="100"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Margin="10"
+               parallax:Parallax.UseParallax="True"
+               parallax:Parallax.XOffset="80"
+               parallax:Parallax.YOffset="30"/>
+
+        <Image Source="Images/vs.png"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Right"
+               Margin="10"
+               Width="50"
+               parallax:Parallax.UseParallax="True"
+               parallax:Parallax.XOffset="50"
+               parallax:Parallax.YOffset="90"/>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    parallax:Parallax.UseParallax="True"
+                    parallax:Parallax.XOffset="50"
+                    parallax:Parallax.YOffset="50"
+                    parallax:Parallax.XDirection="Behind"
+                    parallax:Parallax.YDirection="Behind">
+            <TextBox Width="100" Margin="2"/>
+            <TextBox Width="100" Margin="2"/>
+            <TextBox Width="100" Margin="2"/>
+            <Button Content="Join" Margin="2"/>
+        </StackPanel>
+    </Grid>
+</Window>
